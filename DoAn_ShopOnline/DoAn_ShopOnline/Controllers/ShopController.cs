@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn_ShopOnline.Models.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,14 +13,16 @@ namespace DoAn_ShopOnline.Controllers
         // GET: /Shop/
         public ActionResult Index()
         {
-            return View();
+            var db = ShopOnlineBUS.DanhSach();
+            return View(db);
         }
 
         //
         // GET: /Shop/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            var db = ShopOnlineBUS.ChiTiet(id);
+            return View(db);
         }
 
         //
